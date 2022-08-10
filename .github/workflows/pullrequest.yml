@@ -7,12 +7,12 @@ jobs:
       - name: checkout repository code
         uses: actions/checkout@v3
       - name: making a new env file
-        uses: SpicyPizza/create-envfille@v1
+        uses: SpicyPizza/create-envfile@v1
         with:
-          envkey_DATABASE_URL="postgresql://postgres:postgres@db_pratica_ci-cd:5432/didi_students_CI-CD_test"
-          envkey_POSTGRES_USER="postgres"
-          envkey_POSTGRES_PASSWORD="postgres"
-          envkey_POSTGRES_DB="didi_students_CI-CD_test"
+          envkey_DATABASE_URL: postgresql://postgres:postgres@db_pratica_ci-cd:5432/didi_students_CI-CD_test
+          envkey_POSTGRES_USER: postgres
+          envkey_POSTGRES_PASSWORD: postgres
+          envkey_POSTGRES_DB: didi_students_CI-CD_test
           file_name: .env.test
       - name: Run tests
         run: docker-compose -f docker-compose-test.yml run node_app_pratica_ci-cd npm run test
